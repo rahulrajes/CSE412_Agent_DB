@@ -1,0 +1,28 @@
+services:
+
+  postgres:
+    image: pgvector/pgvector:pg17
+
+    environment:
+      POSTGRES_DB: semanticdb
+      POSTGRES_USER: rahul_rajesh
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    ports:
+      - "5431:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U rahul_rajesh -d semanticdb"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:

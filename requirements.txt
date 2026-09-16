@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+
+langgraph
+langchain
+langchain-openai
+
+sqlalchemy
+psycopg[binary]
+alembic
+
+pgvector
+pydantic
+pydantic-settings
+
+python-dotenv

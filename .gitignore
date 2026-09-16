@@ -1,0 +1,35 @@
+# Secrets / environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Local data
+data/
+*.csv
+
+# Logs
+*.log
+
+# Build / distribution
+build/
+dist/
