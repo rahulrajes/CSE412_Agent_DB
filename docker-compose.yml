@@ -13,6 +13,9 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      # Read-only mounts so setup and the psql demo can run inside the container.
+      - ./brazil_olist_dataset:/data:ro
+      - ./sql:/sql:ro
 
     healthcheck:
       test:
