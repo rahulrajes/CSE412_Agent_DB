@@ -2,9 +2,9 @@
 -- 03  Load the Olist dataset into the physical layer
 --
 -- Run from psql:   \i sql/03_load_olist.sql
--- CSVs are read from :datadir (default: brazil_olist_dataset,
--- relative to where psql was started). Inside the Docker container
--- the folder is mounted at /data:  psql -v datadir=/data ...
+-- CSVs are read from :datadir. By default that is /data when run
+-- inside the Docker container (where the folder is mounted), and
+-- brazil_olist_dataset/ when run from a psql started in the repo.
 --
 -- Tables are loaded parents-first so every foreign key is checked
 -- as rows arrive. The whole load is one transaction.
@@ -12,7 +12,9 @@
 
 \if :{?datadir}
 \else
-    \set datadir brazil_olist_dataset
+    -- Inside the Docker container the CSVs are mounted at /data;
+    -- from a psql on your Mac, use the folder in the repo.
+    \set datadir `if [ -d /data ]; then echo /data; else echo brazil_olist_dataset; fi`
 \endif
 
 \set ON_ERROR_STOP on

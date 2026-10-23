@@ -53,6 +53,7 @@ Next time, start the database with `docker compose up -d` and go straight to ste
 | `scripts/setup_db.sh` | Rebuilds everything: runs `01` → `04` inside the container |
 | `docker-compose.yml` | PostgreSQL 17 container; mounts the data at `/data` and SQL at `/sql` |
 | `docs/phase2_demo.md` | Step-by-step psql demo runbook with expected answers |
+| `docs/demo/part_*.md` | One script per presenter (A tables, B data, C types, D queries): commands, what to say, likely TA questions |
 | `docs/olist_data_model.md` | Notes on the raw data: grain, keys, fan-out risks |
 | `Proposal - Phase 1.pdf` | Phase 1 proposal |
 | `app/` | Early Python code for the AI agent (later phase, not used yet) |
